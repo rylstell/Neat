@@ -1,0 +1,12 @@
+num_inputs = 3
+num_outputs = 2
+population_size = 100
+distance_threshold = 10
+excess_cons_coeficient = 1
+disjoint_cons_coeficient = 1
+weight_diff_coeficient = 0.2
+add_con_rate = 0.3
+add_node_rate = 0.08
+mutate_weight_rate = 0.8
+replace_weight_rate = 0.1
+toggle_enable_rate = 0.05
