@@ -114,7 +114,7 @@ class NodeHolder(object):
 
 
 
-class ConnHolder(object):
+class ConHolder(object):
     def __init__(self):
         self.connections = []
         self.inovs = []
@@ -214,7 +214,7 @@ class Genome(object):
         self.num_inputs = num_inputs
         self.num_outputs = num_outputs
         self.nodes = NodeHolder()
-        self.connections = ConnHolder()
+        self.connections = ConHolder()
         self.fitness = 0
 
     def __str__(self):
@@ -268,7 +268,7 @@ class Genome(object):
         return excess_val + disjoint_val + weight_diff_val
 
     @staticmethod
-    def cross_over(g1, g2):
+    def crossover(g1, g2):
         if g2.fitness > g1.fitness:
             tmp = g2
             g2 = g1
@@ -390,7 +390,7 @@ class Neat(object):
         self.process_config(config)
         self.population = []
         self.nodes = NodeHolder()
-        self.connections = ConnHolder()
+        self.connections = ConHolder()
         self.node_count = 0
         self.inov_num_count = 0
         self.species = []
@@ -542,7 +542,7 @@ class Neat(object):
                     g1 = choice(top_half)
                     g2 = choice(top_half)
                     while g2 == g1: g2 = choice(top_half)
-                    newg = Genome.cross_over(g1, g2)
+                    newg = Genome.crossover(g1, g2)
                     newg.mutate()
                     self.population.append(newg)
 
@@ -612,7 +612,7 @@ def main():
         genome1.mutate()
         genome2.mutate()
 
-    child = Genome.cross_over(genome1, genome2)
+    child = Genome.crossover(genome1, genome2)
 
     ffnet = child.ff_net()
 
