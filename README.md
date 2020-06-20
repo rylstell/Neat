@@ -1,6 +1,6 @@
 # Neat
-A topology and weight evolving artificial neural network (TWEANN).
-This module is a basic implementation of the genetic algorithm described in [this](http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf) paper.
+A topology and weight evolving artificial neural network (TWEANN).<br/>
+This module is a basic implementation of the genetic algorithm described in [this](http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf) paper.<br/>
 Usage is rather simple:
 ```python
 from neat import Neat
@@ -20,4 +20,4 @@ guess = nets[0].guess(inputs)
 print(guess)
 ```
 
-\* It works okay. Honestly, I have't tested it much...
+\* It works okay. Honestly, I haven't tested it much...
